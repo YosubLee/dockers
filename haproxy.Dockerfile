@@ -7,4 +7,4 @@ COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 # ssl file
 COPY ssl.pem /usr/local/etc/haproxy/ssl.pem
 
-EXPOST 8080
+EXPOSE 8080
