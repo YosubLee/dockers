@@ -1,4 +1,4 @@
-# load-balancer
+# Haproxy
 
 ## SSL 변경
 
