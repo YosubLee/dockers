@@ -9,9 +9,9 @@ RUN chmod +x /docker_install.sh
 RUN /docker_install.sh
 
 #설치 후 도커그룹의 jenkins 계정 생성 후 해당 계정으로 변경
-RUN groupadd -g 944 docker
+RUN groupmod -g 994 docker
 RUN usermod -aG docker jenkins
 
 USER jenkins
-VOLUME /var/jenkins_home
+VOLUME ["/var/run/docker.sock", "/var/jenkins_home"]
 EXPOSE 8080/tcp
