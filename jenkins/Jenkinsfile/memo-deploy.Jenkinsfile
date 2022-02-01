@@ -15,6 +15,7 @@ pipeline {
                 sh './gradlew build -x test'
             }
         }
+        
         stage('RUN') {
         	steps {
         		sh 'docker build -t memo/app .'
