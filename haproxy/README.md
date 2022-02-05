@@ -16,6 +16,9 @@ bind *:8080 ssl crt /usr/local/etc/haproxy/ssl.pem
 
 Docker 실행
 ```bash
-docker build -t load-balancer-haproxy:1.0 . 
-docker run --name load-balancer-haproxy -p 443:8080 -d --network memo-network load-balancer-haproxy:1.0
+docker network create memo-network && \
+docker network create gitlab-network
+
+docker build -t load-balancer-haproxy . 
+docker run --name load-balancer-haproxy --publish 443:8080 -detach --network memo-network,gitlab-network load-balancer-haproxy
 ```
