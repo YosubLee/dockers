@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.319.2-lts
+FROM jenkins/jenkins:2.332.1-lts-jdk11
 
 #도커를 실행하기 위한 root 계정으로 전환
 USER root
